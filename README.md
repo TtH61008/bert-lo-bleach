@@ -1,0 +1,2 @@
+# bert-lo-bleach
+コミックLOとBLEACHのどちらのキャッチコピーかをBERTにあててもらう
