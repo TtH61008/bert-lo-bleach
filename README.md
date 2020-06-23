@@ -3,6 +3,8 @@
 
 # usage
 ```
+#ぶっちゃけdataの前処理までは済んだ状態でpushしてある。
+
 #Juman++、こっちの方が良さそう
 sudo  apt-get install libboost-all-dev google-perftools libgoogle-perftools-dev
 wget "http://lotus.kuee.kyoto-u.ac.jp/nl-resource/jumanpp/jumanpp-1.02.tar.xz"
@@ -13,12 +15,13 @@ make
 sudo make install
 cd ../
 
+# dataの前処理
+python bert-lo-bleach/src/preprocess.py bert-lo-bleach/data/lo.tsv bert-lo-bleach/data/bleach.tsv bert-lo-bleach/data/concatted.tsv 
+
+
 # このリポジトリとbertのリポジトリのclone
 git clone https://github.com/TtH61008/bert-lo-bleach.git    
 git clone https://github.com/google-research/bert.git
-
-# dataの前処理
-python bert-lo-bleach/src/preprocess.py bert-lo-bleach/data/lo.tsv bert-lo-bleach/data/bleach.tsv bert-lo-bleach/data/concatted.tsv 
 
 # BERT日本語モデルのダウンロード
 wget "http://nlp.ist.i.kyoto-u.ac.jp/DLcounter/lime.cgi?down=http://nlp.ist.i.kyoto-u.ac.jp/nl-resource/JapaneseBertPretrainedModel/Japanese_L-12_H-768_A-12_E-30_BPE.zip&name=Japanese_L-12_H-768_A-12_E-30_BPE.zip"
