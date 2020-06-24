@@ -44,5 +44,4 @@ dev_split_len = int(len(random_sorted_df)*0.8)
 
 random_sorted_df[:train_split_len].to_csv(args.output_dir+"/train.tsv", sep="\t", header=None,index=None)
 random_sorted_df[train_split_len:dev_split_len].to_csv(args.output_dir+"/dev.tsv", sep="\t", header=None,index=None)
-# random_sorted_df[dev_split_len:][["index", "sentence"]].to_csv(args.output_dir+"/test.tsv", sep="\t", index=None)
-random_sorted_df[dev_split_len:].to_csv(args.output_dir+"/test.tsv", sep="\t", index=None,header=None)
+random_sorted_df[dev_split_len:][["index", "sentence"]].to_csv(args.output_dir+"/test.tsv", sep="\t", index=None)
